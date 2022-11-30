@@ -25,8 +25,8 @@ Mobile
 
 ### Links
 
-- Solution Frontend Mentor: [Frontend solution](https://www.frontendmentor.io/solutions/3column-card-tkMO8TTvug)
-- Live Site: [Live site with GitHub Pages](https://marioferrer.github.io/-FM-07_column-card/)
+- Solution Frontend Mentor: [Frontend solution](https://www.frontendmentor.io/solutions/social-proof-section-HOrJECzrEk)
+- Live Site: [Live site with GitHub Pages](https://marioferrer.github.io/FM-08_social-proof/)
 
 ## My process
 

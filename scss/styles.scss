@@ -1,0 +1,166 @@
+@use "reset";
+@use "variables";
+@import "mixins";
+
+body {
+  background:
+    url(../images/bg-pattern-top-mobile.svg) top left / 50vw no-repeat,
+    url(../images/bg-pattern-bottom-mobile.svg) bottom -50vh right / 100vw no-repeat;
+  @include flex (row, center, center, nowrap);
+
+  @include media {
+    background:
+      url(../images/bg-pattern-top-desktop.svg) top left / 50vw auto no-repeat,
+      url(../images/bg-pattern-bottom-desktop.svg) bottom right / 50vw no-repeat;
+  }
+}
+
+main {
+  width: 375px;
+  min-width: 275px;
+  margin: 4rem 2rem;
+
+  @include media {
+    width: auto;
+    max-width: 1110px;
+    margin: 0 2rem;
+  }
+}
+
+.ratings {
+  text-align: center;
+
+  @include media {
+    @include flex (row, space-between, center, nowrap);
+  }
+}
+
+.rating {
+  margin-bottom: 3rem;
+
+  @include media {
+    text-align: left;
+  }
+
+  &__h1 {
+    padding: 0 2rem;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: .8;
+    margin-bottom: 1.5rem;
+
+    @include media {
+      padding: 0;
+      max-width: 25rem;
+      font-size: 3.5rem;
+      line-height: .9;
+    }
+  }
+
+  &__p {
+    font-size: 1.2rem;
+    color: var(--Grayish-Magenta);
+
+    @include media {
+      max-width: 30rem;
+    }
+  }
+}
+
+.stars {
+  @include flex (column, center, flex-end, nowrap);
+  gap: 1rem;
+  margin-bottom: 3rem;
+
+  &__box {
+    background-color: var(--Light-Magenta);
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: .5rem;
+    @include flex (row, center, center, wrap);
+    gap: .7rem;
+
+    @include media {
+      @include flex (row, flex-start, center, nowrap);
+      padding: 1rem 2rem;
+      width: 30rem;
+
+      &:nth-child(1) {
+        margin-right: 8rem;
+      }
+
+      &:nth-child(2) {
+        margin-right: 4rem;
+      }
+    }
+  }
+
+  &__img {
+    width: 1.1rem;
+  }
+
+  &__p {
+    width: 100%;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--Magenta);
+
+    @include media {
+      width: auto;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.reviews {
+  @include flex (column, center, center, wrap);
+  gap: 1rem;
+
+  @include media {
+    @include flex (row, center, center, nowrap);
+    gap: 2rem;
+  }
+}
+
+.card {
+  background-color: var(--Magenta);
+  @include flex (row, flex-start, center, wrap);
+  gap: 2rem;
+  border-radius: .5rem;
+  padding: 2.5rem 2.4rem;
+
+  @include media {
+    &:nth-child(2) {
+      margin-top: 2rem;
+    }
+
+    &:nth-child(3) {
+      margin-top: 4rem;
+    }
+  }
+
+  &__img {
+    width: 2.5rem;
+    border-radius: 50%;
+  }
+
+  &__h2 {
+    color: var(--White);
+    font-weight: 500;
+    margin-bottom: .2rem;
+  }
+
+  &__span {
+    color: var(--Pink);
+  }
+
+  &__p {
+    color: var(--White);
+    width: 100%;
+    line-height: 1.5rem;
+
+    @include media {
+      font-size: 1.1rem;
+    }
+  }
+}

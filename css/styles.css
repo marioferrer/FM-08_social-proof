@@ -1,0 +1,283 @@
+@charset "UTF-8";
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+  font-size: var(--font-size);
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-family: var(--ff);
+  font-size: var(--font-size);
+  background-color: var(--White);
+  color: var(--Magenta);
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Aquí definimos las Custom properties */
+:root {
+  --Magenta: hsl(300, 43%, 22%);
+  --Grayish-Magenta: hsl(303, 10%, 53%);
+  --Light-Magenta: hsl(300, 24%, 96%);
+  --Pink: hsl(333, 80%, 67%);
+  --White: hsl(0, 0%, 100%);
+  /* Tipografía */
+  --font-size: 15px;
+  --ff: "League Spartan", sans-serif;
+}
+
+body {
+  background: url(../images/bg-pattern-top-mobile.svg) top left/50vw no-repeat, url(../images/bg-pattern-bottom-mobile.svg) bottom -50vh right/100vw no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+@media screen and (min-width: 1440px) {
+  body {
+    background: url(../images/bg-pattern-top-desktop.svg) top left/50vw auto no-repeat, url(../images/bg-pattern-bottom-desktop.svg) bottom right/50vw no-repeat;
+  }
+}
+
+main {
+  width: 375px;
+  min-width: 275px;
+  margin: 4rem 2rem;
+}
+@media screen and (min-width: 1440px) {
+  main {
+    width: auto;
+    max-width: 1110px;
+    margin: 0 2rem;
+  }
+}
+
+.ratings {
+  text-align: center;
+}
+@media screen and (min-width: 1440px) {
+  .ratings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}
+
+.rating {
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 1440px) {
+  .rating {
+    text-align: left;
+  }
+}
+.rating__h1 {
+  padding: 0 2rem;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 0.8;
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 1440px) {
+  .rating__h1 {
+    padding: 0;
+    max-width: 25rem;
+    font-size: 3.5rem;
+    line-height: 0.9;
+  }
+}
+.rating__p {
+  font-size: 1.2rem;
+  color: var(--Grayish-Magenta);
+}
+@media screen and (min-width: 1440px) {
+  .rating__p {
+    max-width: 30rem;
+  }
+}
+
+.stars {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.stars__box {
+  background-color: var(--Light-Magenta);
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+@media screen and (min-width: 1440px) {
+  .stars__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 1rem 2rem;
+    width: 30rem;
+  }
+  .stars__box:nth-child(1) {
+    margin-right: 8rem;
+  }
+  .stars__box:nth-child(2) {
+    margin-right: 4rem;
+  }
+}
+.stars__img {
+  width: 1.1rem;
+}
+.stars__p {
+  width: 100%;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--Magenta);
+}
+@media screen and (min-width: 1440px) {
+  .stars__p {
+    width: auto;
+    margin-left: 1rem;
+  }
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+@media screen and (min-width: 1440px) {
+  .reviews {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 2rem;
+  }
+}
+
+.card {
+  background-color: var(--Magenta);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  border-radius: 0.5rem;
+  padding: 2.5rem 2.4rem;
+}
+@media screen and (min-width: 1440px) {
+  .card:nth-child(2) {
+    margin-top: 2rem;
+  }
+  .card:nth-child(3) {
+    margin-top: 4rem;
+  }
+}
+.card__img {
+  width: 2.5rem;
+  border-radius: 50%;
+}
+.card__h2 {
+  color: var(--White);
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+.card__span {
+  color: var(--Pink);
+}
+.card__p {
+  color: var(--White);
+  width: 100%;
+  line-height: 1.5rem;
+}
+@media screen and (min-width: 1440px) {
+  .card__p {
+    font-size: 1.1rem;
+  }
+}/*# sourceMappingURL=styles.css.map */
